@@ -1,0 +1,28 @@
+div.pix-row {
+	margin: 0 0 0 0;
+}
+
+div.pix {
+	/* width: 40px; testing*/
+	/* height:	40px; testing*/ 
+	display: inline-block;
+	position: relative;
+	border-left: solid 1px;
+	border-top: solid 1px;
+}
+
+div.pix:last-child {
+	border-right: solid 1px;
+}
+
+div.pix-row:last-child > div.pix {
+	border-bottom: solid 1px;
+}
+
+#board {
+	position: relative;
+
+	/* border: solid 2px blue; testing*/
+	padding-bottom: 1px;
+	margin: 0 auto 0 auto;
+}
