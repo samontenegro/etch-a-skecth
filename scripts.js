@@ -1,10 +1,19 @@
 const board = document.querySelector('#board');
 
-const boardsize = 500;
+const boardsize = 600;
 board.style.height = `${boardsize}px`;
 board.style.width = `${boardsize}px`;
 
-const dim = 10;
+const dim_default = 10;
+
+function initializeBoard () {
+	let dim = parseInt(prompt('How many rows do you want for your grid? :)'));
+	if (!dim) {dim = dim_default}
+	wipeBoard(); 
+	clearBoard(); 
+	fillBoard(dim);
+}
+
 
 function makeRow (N) {
 	/* This function returns a row with N cells,
@@ -41,13 +50,35 @@ function fillBoard (N) {
 		board.appendChild(row);
 	}
 
+	sketchEnable()
+
 }
 
 function clearBoard () {
-	while (board.firstChild) {
-		board.removeChild(board.firstChild);
+	while (board.lastChild) {
+		if (board.childElementCount === 1) {break}
+		board.removeChild(board.lastChild);
 	}
 
 }
 
-fillBoard(dim)
+function sketchEnable() {
+	let pixs = document.querySelectorAll('.pix');
+	pixs.forEach((pix) => pix.addEventListener('mouseover',(e) => blackColor(e.target)));
+}
+
+function blackColor(elem) {
+	elem.style.backgroundColor = 'rgb(0,0,0)';
+}
+
+function randColor (elem) {
+	elem.style
+}
+
+function wipeBoard () {
+	let pixs = document.querySelectorAll('.pix');
+	pixs.forEach((pix) => pix.style.backgroundColor = 'rgb(255,255,255)');
+}
+
+
+fillBoard(dim_default)

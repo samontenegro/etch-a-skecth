@@ -9,6 +9,7 @@ div.pix {
 	position: relative;
 	border-left: solid 1px;
 	border-top: solid 1px;
+	background-color: rgb(255,255,255);
 }
 
 div.pix:last-child {
@@ -19,10 +20,81 @@ div.pix-row:last-child > div.pix {
 	border-bottom: solid 1px;
 }
 
+div.pix-row:nth-child(2) > div.pix:first-child {
+	border-top-left-radius: 10px;
+}
+
+div.pix-row:nth-child(2) > div.pix:last-child {
+	border-top-right-radius: 10px;
+}
+
+div.pix-row:last-child > div.pix:first-child {
+	border-bottom-left-radius: 10px;
+}
+
+div.pix-row:last-child > div.pix:last-child {
+	border-bottom-right-radius: 10px;
+}
+
 #board {
 	position: relative;
 
 	/* border: solid 2px blue; testing*/
 	padding-bottom: 1px;
 	margin: 0 auto 0 auto;
+}
+
+div.nav {
+	width: 600px;
+	margin: 40px auto 40px auto;
+}
+
+div.nav > p {
+	font-family: 'Roboto';
+	font-weight: 1000;
+	font-size: 40px;
+	line-height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: center;
+}
+
+#board > div.options {
+	position: absolute;
+	left: 620px;
+	width: 150px;
+}
+
+button {
+	display: inline-block;
+	width: 150px;
+
+    border: solid 1px black;
+    border-radius: 15px;
+    padding: 4px 0 4px 0;
+    margin: 0 0 10px 0;
+
+    text-decoration: none;
+    background: white;
+    color: #BBBBBB;
+
+    font-family: 'Roboto';
+    font-size: 30px;
+    line-height: 30px;
+
+    cursor: pointer;
+    text-align: center;
+    transition: color 100ms ease-in-out,
+    			background 100ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover {
+	color: black;
+}
+
+button:active {
+	background: black;
+	color: white;
 }
